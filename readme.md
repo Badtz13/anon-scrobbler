@@ -12,5 +12,7 @@ Clone and enter the repository:
 - `git clone https://github.com/Badtz13/anon-scrobbler.git`
 - `cd anon-scrobbler`
 
+Change the username on line 4 to your lastfm username.
+
 ### Usage
-To use the scrobbler, simply run `sh anonradio.sh`
+`python radio.py`
