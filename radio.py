@@ -18,8 +18,9 @@ while(True):
 
     songInfo = recentLine.split(':')[1].split(' - ')
     if len(songInfo) > 1:
-        if title != songInfo[1]:
-            print(recentLine)
-            now = datetime.now().strftime('%Y-%m-%d.%H:%M')
-            os.system('scrobbler scrobble ' + username + " \"" + songInfo[0] + "\" \"" + songInfo[1] + "\" " + now)
-            title = songInfo[1]
+        if 'anonradio' not in songInfo[1] and '_spot_' not in songInfo:
+            if title != songInfo[1]:
+                print(recentLine)
+                now = datetime.now().strftime('%Y-%m-%d.%H:%M')
+                os.system('scrobbler scrobble ' + username + " \"" + songInfo[0] + "\" \"" + songInfo[1] + "\" " + now)
+                title = songInfo[1]
